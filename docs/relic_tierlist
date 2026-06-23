@@ -1,0 +1,59 @@
+# Relic Tier List and Strategy
+
+## S-Tier Relics (Always Take)
+
+### Snecko Eye
+- Effect: Draw 2 additional cards each turn. Randomize card costs (0-3).
+- Why it is S-tier: The extra draw is enormous. On average, costs stay the same, but you now see 7 cards per turn instead of 5. High-cost cards become amazing because they frequently cost 0-1.
+- Best with: Expensive cards like Demon Form, Bludgeon, Carnage. Terrible with 0-cost decks.
+
+### Dead Branch
+- Effect: Whenever you exhaust a card, add a random card to your hand.
+- Why it is S-tier: Combined with Corruption (all skills cost 0, exhaust), you generate endless free cards every turn. Even without Corruption, any exhaust-heavy deck becomes incredibly powerful.
+
+### Runic Pyramid
+- Effect: No longer discard hand at end of turn.
+- Why it is S-tier: Lets you save key cards for the right moment. Dramatically improves consistency. Combo pieces are always available when you need them.
+- Downside: Hand can clog with Curses or Wounds. Need some exhaust to manage hand size.
+
+## A-Tier Relics (Almost Always Take)
+
+### Vajra
+- Effect: Start every combat with +1 Strength.
+- Why it is A-tier: Free permanent damage boost. Every attack benefits. Simple and universally good on Ironclad.
+
+### Bag of Preparation
+- Effect: Draw 2 additional cards on turn 1.
+- Why it is A-tier: Turn 1 is often the most important turn. Seeing 7 cards on turn 1 dramatically improves your opening.
+
+### Pen Nib
+- Effect: Every 10th attack deals double damage.
+- Why it is A-tier: Pairs excellently with heavy hitters like Heavy Blade or Bludgeon. Track the counter and time your big attacks.
+
+### Anchor
+- Effect: Start every combat with 10 block.
+- Why it is A-tier: Free defense on turn 1 lets you play aggressively. Particularly good against Act 1 elites.
+
+## B-Tier Relics (Situationally Good)
+
+### Ornamental Fan
+- Effect: Every 3rd attack played, gain 4 block.
+- Why: Good in decks that play many small attacks per turn. Less useful in big-hit decks.
+
+### Kunai
+- Effect: Every 3rd attack played, gain +1 Dexterity.
+- Why: Scaling defense through attacks. Excellent in shiv-style or multi-attack decks.
+
+### Molten Egg
+- Effect: All attack cards obtained are upgraded.
+- Why: Saves precious campfire upgrades. More impactful in Act 1 when many cards are still being drafted.
+
+## Relics to Avoid
+
+### Ectoplasm
+- Effect: Gain 1 energy but can no longer gain gold.
+- Why to avoid: Gold buys shop relics, card removals, and potions. Losing gold income cripples your run long-term unless you are already in Act 3.
+
+### Philosophy Stone
+- Effect: Gain 1 energy but all enemies start with 1 Strength.
+- Why to avoid: The enemy strength compounds over multi-turn fights. Boss fights become significantly harder.

@@ -1,0 +1,47 @@
+# Boss Fight Strategies
+
+## Act 1 Bosses
+
+### The Guardian
+- Pattern: Alternates between attacking and entering Defensive Mode (gains 9 block and Mode Shift at 30 damage absorbed).
+- Strategy: Apply damage in small bursts to avoid wasting damage on Mode Shift. Front-loaded damage is king here. Avoid playing a single 40-damage card when the guardian only has 10 Mode Shift remaining.
+- Key tip: In Defensive Mode, the Guardian does not attack. Use this window to set up strength, draw cards, or heal with Reaper.
+
+### Hexaghost
+- Pattern: Charges up for a massive multi-hit attack every few turns. Deals 6x(2+n) damage based on how much it has powered up.
+- Strategy: Need strong block for the big attack turns. Having Flame Barrier is excellent since each of the 6 hits triggers the thorns. Kill it fast before it stacks too many Inferno charges.
+- Key tip: Hexaghost always uses Activate on turn 1, giving you a free setup turn.
+
+### Slime Boss
+- Pattern: Splits into two smaller slimes when reduced to half HP. Each half attacks independently.
+- Strategy: Build up strength or damage before triggering the split. The split slimes are weaker individually but attack twice per round. AOE damage is valuable after the split.
+- Key tip: Try to have the boss at exactly half HP when you trigger the split. Over-damaging wastes effort.
+
+## Act 2 Bosses
+
+### The Champ
+- Pattern: Alternates between phases. Uses Execute below 50% HP (deals massive damage). Occasionally uses Taunt to apply Vulnerable and Weak.
+- Strategy: Get the Champ as close to 50% as possible, then burst through the Execute threshold in one turn. Having enough block for the Execute turn is critical.
+
+### The Collector
+- Pattern: Summons two Torch Head minions that deal 7 damage each turn. The Collector buffs them.
+- Strategy: Kill the minions quickly, then focus the Collector. If you leave the minions alive too long, the damage adds up. AOE is extremely valuable here.
+
+## Act 3 Bosses
+
+### Awakened One
+- Pattern: Phase 1 is manageable. Phase 2 gains strength every time you play a Power card.
+- Strategy: In Phase 2, avoid playing Power cards if possible. Front-loaded damage and skills are better. If you must play powers, save them for Phase 1.
+- Key tip: This boss punishes Demon Form builds in Phase 2. Consider whether your deck can win without leaning on powers.
+
+### Time Eater
+- Pattern: After every 12 cards played in a turn, Time Eater heals and ends your turn.
+- Strategy: Play cards efficiently. Avoid playing unnecessary cards. Strength builds that hit hard with few cards excel here.
+- Key tip: Count your cards carefully. You want to end each turn before hitting 12 cards played.
+
+## The Heart
+
+- Requires 3 keys to access (Ruby, Emerald, Sapphire).
+- Pattern: Beat of Death deals 2 (A20: 2) damage every time you play a card. Multi-hit attack of 15x2. Buff removal turn.
+- Strategy: You need strong block AND strong damage. The Heart has 800 HP (A20) and heals. Keep your deck tight so Beat of Death does not whittle you down. Intangibility (from Apparition or Wraith Form) is extremely powerful here.
+- Key tip: The Heart always uses Buff on turn 2. Use turn 1 and turn 2 to set up since the big attacks come on turns 3+.

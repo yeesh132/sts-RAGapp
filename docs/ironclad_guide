@@ -1,0 +1,34 @@
+# Ironclad Strategy Guide
+
+## Core Philosophy
+
+The Ironclad is Slay the Spire's starter character and excels at strength scaling and high-damage decks. His starting relic, Burning Blood, heals 6 HP at the end of each combat, which allows you to take more risks in hallway fights.
+
+## Key Cards to Draft
+
+### Strength Scaling
+- Demon Form: The most powerful strength scaling card. Gains 2 (3 upgraded) strength every turn. Once played, your damage output snowballs rapidly. Best picked in Act 1 or early Act 2.
+- Inflame: Immediate +2 strength for 1 energy. Simple and effective. Great in any deck.
+- Spot Weakness: Conditional +3 strength when enemy intends to attack. Excellent against multi-attack enemies.
+- Limit Break: Doubles your current strength. Combined with Demon Form, this creates exponential damage growth.
+
+### Front-Loaded Damage
+- Carnage: 20 (28 upgraded) damage for 2 energy. Ethereal but extremely efficient damage per energy.
+- Bludgeon: 32 (42 upgraded) damage for 3 energy. The highest single-hit damage card. Great for finishing enemies quickly.
+- Pommel Strike: 9 (10) damage and draw 1 card. Efficient cycle card that replaces itself.
+
+### Defense
+- Shrug It Off: 8 (11) block and draw 1 card. The best defensive card in Ironclad's pool because it cycles.
+- Flame Barrier: 12 (16) block plus 4 (6) damage back to attackers. Excellent against multi-hit enemies.
+- Impervious: 30 (40) block for 2 energy. Exhaust but provides massive burst defense for boss turns.
+
+## Deck Archetypes
+
+### Strength Build
+Focus on Demon Form or Inflame plus Limit Break. Add Heavy Blade (14 damage, hits scale with strength x3/x5) as your primary damage dealer. Keep the deck lean so you draw Demon Form early.
+
+### Exhaust Build
+Built around Feel No Pain (3 block per exhaust), Dark Embrace (draw 1 per exhaust), and Corruption (all skills cost 0 but exhaust). Extremely powerful but requires all pieces.
+
+### Body Slam Build
+Stack block cards and use Body Slam (damage equal to current block) as your win condition. Barricade (block carries over between turns) is the key enabler. Add Entrench (double current block) for massive scaling.
