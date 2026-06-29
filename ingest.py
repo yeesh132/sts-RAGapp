@@ -223,9 +223,7 @@ def ingest():
     print(f"Embed model: {OLLAMA_EMBED_MODEL}\n")
 
     # Chroma client
-    client = chromadb.Client(
-        Settings(chroma_db_impl="duckdb+parquet", persist_directory=PERSIST_DIR)
-    )
+    client = chromadb.PersistentClient(path=PERSIST_DIR)
     col = client.get_or_create_collection(name=COLLECTION_NAME)
 
     # Step 1 — fetch community scores upfront so normalize() can use them
@@ -263,7 +261,7 @@ def ingest():
 
     if not ids:
         print("Nothing to do. Index is up to date.")
-        client.persist()
+        # client.persist()
         return
 
     # Step 4 — embed and store in batches
@@ -285,7 +283,7 @@ def ingest():
             embeddings=embeddings,
         )
 
-    client.persist()
+    # client.persist()
     print(f"\n✓ Done. Index persisted to {PERSIST_DIR}")
 
 

@@ -4,10 +4,8 @@ import requests
 import chromadb
 from chromadb.config import Settings
 
-# ---------------------------------------------------------------------------
-# Config
-# ---------------------------------------------------------------------------
 
+# Config
 PERSIST_DIR        = os.environ.get("CHROMA_PERSIST_DIR", "./chroma_db")
 OLLAMA_BASE_URL    = os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_EMBED_MODEL = os.environ.get("OLLAMA_EMBED_MODEL", "nomic-embed-text:latest")
@@ -16,15 +14,8 @@ COLLECTION_NAME    = "sts_codex"
 TOP_K              = 5
 
 
-# ---------------------------------------------------------------------------
-# System prompt
-# ---------------------------------------------------------------------------
-
+# system prompt
 def build_system_prompt() -> str:
-    """
-    Returns the baseline instruction that tells the model what it is
-    and how it should behave. Prepended to every query.
-    """
     return (
         "You are a Slay the Spire 2 assistant helping a player during a run. "
         "Answer questions about cards, relics, potions, monsters, and events "
@@ -37,15 +28,9 @@ def build_system_prompt() -> str:
     )
 
 
-# ---------------------------------------------------------------------------
 # Ollama helpers
-# ---------------------------------------------------------------------------
-
+# ollama exposes its own api for generation and embedding
 def embed(text: str) -> list[float]:
-    """
-    Embed a query string using the Ollama embeddings endpoint.
-    Must use the same model as ingest.py so vectors are in the same space.
-    """
     resp = requests.post(
         f"{OLLAMA_BASE_URL}/api/embeddings",
         json={"model": OLLAMA_EMBED_MODEL, "prompt": text},
@@ -56,7 +41,6 @@ def embed(text: str) -> list[float]:
 
 
 def generate(prompt: str) -> str:
-    """Send a completed prompt to Ollama and return the response text."""
     resp = requests.post(
         f"{OLLAMA_BASE_URL}/api/generate",
         json={
@@ -70,10 +54,7 @@ def generate(prompt: str) -> str:
     return resp.json()["response"].strip()
 
 
-# ---------------------------------------------------------------------------
-# Retrieval
-# ---------------------------------------------------------------------------
-
+# retrieval helpers
 def retrieve(
     query: str,
     col: chromadb.Collection,
@@ -99,6 +80,8 @@ def retrieve(
 
     where = {"type": entity_type} if entity_type else None
 
+    # Query the collection for the top-k most similar chunks
+    # chroma handles the embedding search and returns the results
     results = col.query(
         query_embeddings=[query_embedding],
         n_results=k,
@@ -113,10 +96,7 @@ def retrieve(
     return docs, metadatas, distances
 
 
-# ---------------------------------------------------------------------------
-# Prompt assembly
-# ---------------------------------------------------------------------------
-
+#  Prompt assembly
 def build_prompt(query: str, docs: list[str], metadatas: list[dict]) -> str:
     """
     Combine the system prompt, retrieved context chunks, and the user's
@@ -132,6 +112,7 @@ def build_prompt(query: str, docs: list[str], metadatas: list[dict]) -> str:
         context_blocks.append(block)
 
     context = "\n\n---\n\n".join(context_blocks)
+    
 
     return (
         f"{build_system_prompt()}\n\n"
@@ -141,10 +122,8 @@ def build_prompt(query: str, docs: list[str], metadatas: list[dict]) -> str:
     )
 
 
-# ---------------------------------------------------------------------------
-# Main query function
-# ---------------------------------------------------------------------------
 
+# Main query function
 def ask(
     query: str,
     entity_type: str | None = None,
@@ -226,10 +205,12 @@ def parse_type_prefix(raw: str) -> tuple[str, str | None]:
     Check if the user prefixed their question with an entity type filter.
     e.g. "card: what does Bash do?" -> ("what does Bash do?", "card")
     """
+    # Valid entity types for filtering
     valid_types = {
         "card", "relic", "monster", "encounter",
         "potion", "power", "keyword", "event", "enchantment", "character",
     }
+    # may jjust get rid of this and ignore any colon
     if ":" in raw:
         prefix, rest = raw.split(":", 1)
         if prefix.strip().lower() in valid_types:
@@ -260,10 +241,7 @@ def repl() -> None:
         print_result(result)
 
 
-# ---------------------------------------------------------------------------
 # Entry point
-# ---------------------------------------------------------------------------
-
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         question = " ".join(sys.argv[1:])

@@ -219,3 +219,6 @@ __marimo__/
 
 # .tkb
 .tkb
+
+# chromadb
+chroma_db/
