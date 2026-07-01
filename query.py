@@ -2,7 +2,7 @@ import os
 import sys
 import requests
 import chromadb
-from chromadb.config import Settings
+# from chromadb.config import Settings
 
 
 # Config
@@ -146,9 +146,7 @@ def ask(
         }
     """
     # Load the Chroma collection from disk
-    client = chromadb.Client(
-        Settings(chroma_db_impl="duckdb+parquet", persist_directory=PERSIST_DIR)
-    )
+    client = chromadb.PersistentClient(path=PERSIST_DIR)
 
     try:
         col = client.get_collection(name=COLLECTION_NAME)

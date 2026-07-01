@@ -2,8 +2,9 @@ import os
 import time
 import requests
 import chromadb
-from chromadb.config import Settings
+# from chromadb.config import Settings
 from datetime import datetime
+import re
 
 
 BASE               = "https://spire-codex.com"
@@ -41,6 +42,9 @@ def fetch_json(path: str) -> dict | list:
     r = requests.get(BASE + path, headers=HEADERS, timeout=15)
     r.raise_for_status()
     return r.json()
+
+def clean_description(text: str) -> str:
+    return re.sub(r'\[.*?\]', '', text).strip()
 
 # store all items in a dict for fast lookup when normalizing each entity
 def gather_items() -> list[dict]:
@@ -85,7 +89,8 @@ def normalize(item: dict, score: dict | None) -> tuple[str, str, dict]:
 
     name = raw.get("name") or raw.get("title") or doc_id
     desc = raw.get("description") or raw.get("flavor") or raw.get("wiki_intro") or ""
-
+    desc = clean_description(desc)
+    
     # Card
     card_parts = []
     if typ == "card":
